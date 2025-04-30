@@ -1,6 +1,6 @@
 Enunciado
 
-![Flujo del programa (Cómo interactúan los paquetes)](src/images/examen.png)
+![Flujo del programa (Cómo interactúan los paquetes)](src/images/UML_mensajeria.jpg)
 
 
 Se desea realizar un programa que sea capaz de gestionar el manejo de mensajes. Un mensaje está definido por un código numérico y un texto que es el mensaje en sí. Tendremos dos tipos de mensajes: mensajes sin encriptar y mensajes encriptados.
