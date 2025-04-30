@@ -1,0 +1,38 @@
+@startuml
+package "gestiondemensajes" {
+  abstract class Mensaje {
+    + codigo: int
+    + texto: String
+  }
+
+  class MensajeSinEncriptar extends Mensaje {
+  }
+
+  interface IEncriptable {
+    + encriptar(): String
+    + desencriptar(): String
+  }
+
+  class MensajeEncriptado extends Mensaje implements IEncriptable {
+    + textoEncriptado: String
+    + encriptar(): String
+    + desencriptar(): String
+  }
+
+  class Mensajeria {
+    - listaMensajes: List<Mensaje>
+    + listarTodosMensajes(): void
+    + mostrarMensajesNormales(): void
+    + mostrarMensajesEncriptados(): void
+    + buscarMensaje(codigo: int): Mensaje
+    + añadirMensaje(mensaje: Mensaje): void
+    + desencriptarMensaje(codigo: int): void
+    + eliminarMensaje(codigo: int): void
+  }
+
+  Mensajeria --* Mensaje : contiene
+  Mensaje <|-- MensajeSinEncriptar
+  Mensaje <|-- MensajeEncriptado
+  MensajeEncriptado ..> IEncriptable : implements
+}
+@enduml
